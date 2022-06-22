@@ -1,0 +1,55 @@
+{
+  "name": "gatsby-plugin-scroll-position",
+  "description": "With this Gatsby Plugin you can easily persist your overflow scroll elements",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "layout",
+    "provider",
+    "wrapper"
+  ],
+  "version": "0.0.0-development",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tujoworker/gatsby-plugin-scroll-position.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tujoworker/gatsby-plugin-scroll-position/issues"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Tobias Høegh",
+  "scripts": {
+    "compile": "esbuild script.js --bundle --outdir=compiled --minify --format=iife",
+    "test": "yarn workspace integration-tests test",
+    "test:watch": "yarn workspace integration-tests test --watch",
+    "lint": "eslint --ext .js --ignore-path ../.gitignore .",
+    "release": "semantic-release",
+    "release:dry": "semantic-release --dry-run"
+  },
+  "peerDependencies": {
+    "gatsby": "*",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "@testing-library/react": "13.3.0",
+    "babel-eslint": "10.1.0",
+    "esbuild": "0.14.47",
+    "eslint": "^8.18.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "semantic-release": "^19.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "volta": {
+    "extends": "../package.json"
+  }
+}

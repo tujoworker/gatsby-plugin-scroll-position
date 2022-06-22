@@ -1,0 +1,20 @@
+{
+  "name": "example-basic",
+  "private": true,
+  "version": "0.0.0",
+  "main": "gatsby-config.js",
+  "license": "MIT",
+  "author": "Tobias Høegh",
+  "scripts": {
+    "start": "gatsby develop --port=8090",
+    "build": "gatsby build",
+    "serve": "gatsby serve --port=8090",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "4.17.0",
+    "gatsby-plugin-scroll-position": "workspace:*",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
+}

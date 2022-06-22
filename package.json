@@ -1,0 +1,30 @@
+{
+  "name": "scroll-position-monorepo",
+  "workspaces": [
+    "example-basic",
+    "integration-tests",
+    "gatsby-plugin-scroll-position"
+  ],
+  "private": true,
+  "license": "MIT",
+  "author": "Tobias Høegh",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "yarn compile && yarn workspace example-basic start",
+    "build": "yarn compile && yarn workspace example-basic build",
+    "clean": "yarn compile && yarn workspace example-basic clean",
+    "serve": "yarn workspace example-basic serve",
+    "test": "yarn test:cypress",
+    "test:not-in-use": "yarn workspace integration-tests test",
+    "test:cypress": "yarn workspace integration-tests test:cypress",
+    "test:cypress:ci": "yarn workspace integration-tests test:cypress:ci",
+    "test:watch": "yarn workspace integration-tests test --watch",
+    "lint": "yarn workspace gatsby-plugin-scroll-position lint",
+    "compile": "yarn workspace gatsby-plugin-scroll-position compile",
+    "release": "yarn compile && yarn workspace gatsby-plugin-scroll-position release"
+  },
+  "volta": {
+    "node": "18.4.0"
+  },
+  "packageManager": "yarn@3.2.1"
+}

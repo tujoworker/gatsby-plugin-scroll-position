@@ -1,0 +1,1 @@
+(()=>{function r(){if(!(typeof window>"u"))try{n().forEach(({selector:o,elements:t})=>{t.forEach(e=>{e.scrollTop=parseFloat(window.localStorage.getItem("scroll-"+o))})})}catch{}}function n(){let o=[];try{(window.__SP_ELEMENTS__||[]).forEach(e=>{o.push({selector:e,elements:Array.from(document.querySelectorAll(e))})})}catch{}return o}r();})();
