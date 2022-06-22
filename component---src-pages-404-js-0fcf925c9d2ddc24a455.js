@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkexample_basic=self.webpackChunkexample_basic||[]).push([[883],{2039:function(e,n,u){u.r(n),u.d(n,{default:function(){return a}});var c=u(6521);function a(){return(0,c.jsx)("h1",{children:"404"})}}}]);
+//# sourceMappingURL=component---src-pages-404-js-0fcf925c9d2ddc24a455.js.map
