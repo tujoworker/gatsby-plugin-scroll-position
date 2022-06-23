@@ -3,45 +3,41 @@ Cypress.config({
 })
 
 describe('example-basic', () => {
-  const setPosition = async (selector) => {
-    await cy.visit('/')
-
-    cy.get(selector).invoke('scrollTop').should('equal', 0)
-
-    cy.get(selector).scrollTo(0, 100)
-
-    cy.get(selector).invoke('scrollTop').should('equal', 100)
-  }
-
-  const assertPosition = async (selector) => {
-    await cy.visit('/page-2')
-
-    cy.get(selector).invoke('scrollTop').should('equal', 100)
-  }
+  beforeEach(() => {
+    cy.visit('/')
+  })
 
   it('root page has wrapper with "main" element', () => {
-    cy.visit('/')
     assert.exists(cy.get('main'))
   })
 
-  it('class-selector will set its position', () => {
-    setPosition('.class-selector')
-  })
-  it('class-selector will remember its position', () => {
-    assertPosition('.class-selector')
+  it('class-selector has to restore its position', () => {
+    const selector = '.class-selector'
+
+    cy.get(selector).invoke('scrollTop').should('equal', 0)
+    cy.get(selector).scrollTo(0, 100)
+    cy.get(selector).invoke('scrollTop').should('equal', 100)
+    cy.visit('/page-2')
+    cy.get(selector).invoke('scrollTop').should('equal', 100)
   })
 
-  it('id-selector will set its position', () => {
-    setPosition('#id-selector')
-  })
-  it('id-selector will remember its position', () => {
-    assertPosition('#id-selector')
+  it('id-selector has to restore its position', () => {
+    const selector = '#id-selector'
+
+    cy.get(selector).invoke('scrollTop').should('equal', 0)
+    cy.get(selector).scrollTo(0, 100)
+    cy.get(selector).invoke('scrollTop').should('equal', 100)
+    cy.visit('/page-2')
+    cy.get(selector).invoke('scrollTop').should('equal', 100)
   })
 
-  it('attributes selector will set its position', () => {
-    setPosition('[data-testid="test-selector"]')
-  })
-  it('attributes selector will remember its position', () => {
-    assertPosition('[data-testid="test-selector"]')
+  it('attributes selector has to restore its position', () => {
+    const selector = '[data-testid="test-selector"]'
+
+    cy.get(selector).invoke('scrollTop').should('equal', 0)
+    cy.get(selector).scrollTo(0, 100)
+    cy.get(selector).invoke('scrollTop').should('equal', 100)
+    cy.visit('/page-2')
+    cy.get(selector).invoke('scrollTop').should('equal', 100)
   })
 })
