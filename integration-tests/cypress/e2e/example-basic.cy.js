@@ -15,7 +15,9 @@ describe('example-basic', () => {
     const selector = '.class-selector'
 
     cy.get(selector).invoke('scrollTop').should('equal', 0)
-    cy.get(selector).scrollTo(0, 100)
+    cy.get(selector)
+      .invoke('attr', 'style', 'scrollBehavior: auto')
+      .scrollTo(0, 100, { duration: 100 })
     cy.get(selector).invoke('scrollTop').should('equal', 100)
     cy.visit('/page-2')
     cy.get(selector).invoke('scrollTop').should('equal', 100)
@@ -25,7 +27,9 @@ describe('example-basic', () => {
     const selector = '#id-selector'
 
     cy.get(selector).invoke('scrollTop').should('equal', 0)
-    cy.get(selector).scrollTo(0, 100)
+    cy.get(selector)
+      .invoke('attr', 'style', 'scrollBehavior: auto')
+      .scrollTo(0, 100, { duration: 100 })
     cy.get(selector).invoke('scrollTop').should('equal', 100)
     cy.visit('/page-2')
     cy.get(selector).invoke('scrollTop').should('equal', 100)
@@ -35,7 +39,9 @@ describe('example-basic', () => {
     const selector = '[data-testid="test-selector"]'
 
     cy.get(selector).invoke('scrollTop').should('equal', 0)
-    cy.get(selector).scrollTo(0, 100)
+    cy.get(selector)
+      .invoke('attr', 'style', 'scrollBehavior: auto')
+      .scrollTo(0, 100, { duration: 100 })
     cy.get(selector).invoke('scrollTop').should('equal', 100)
     cy.visit('/page-2')
     cy.get(selector).invoke('scrollTop').should('equal', 100)
@@ -45,28 +51,65 @@ describe('example-basic', () => {
     const selector = '#fallback-position'
 
     const visiblePos = 1110
-    const scrollTo = 200
-    const roundAbout = 50
+    const inView = 100
+    const outOfView = 200
+    const appr = 40
 
-    cy.get(selector).invoke('scrollTop').should('be.gte', visiblePos)
-    cy.get(selector).scrollTo(0, visiblePos + scrollTo)
-    cy.wait(1000)
     cy.get(selector)
       .invoke('scrollTop')
-      .should('be.gte', visiblePos + scrollTo)
+      .should('be.gte', visiblePos)
+      .should('be.lte', visiblePos + appr)
+
+    cy.get(selector).scrollTo(
+      0,
+      visiblePos + outOfView,
+      { duration: 100 },
+      { duration: 100 }
+    )
+
+    cy.get(selector)
+      .invoke('scrollTop')
+      .should('be.gte', visiblePos + outOfView)
+      .should('be.lte', visiblePos + outOfView + appr)
 
     cy.visit('/page-2')
+
     cy.get(selector)
       .invoke('scrollTop')
-      .should('be.gte', visiblePos - roundAbout)
-      .should('be.lte', visiblePos + roundAbout)
-    cy.get(selector).scrollTo(0, scrollTo)
-    cy.wait(1000)
+      .should('be.gte', visiblePos)
+      .should('be.lte', visiblePos + appr)
+
+    cy.get(selector).scrollTo(
+      0,
+      visiblePos - inView,
+      { duration: 100 },
+      { duration: 100 }
+    )
+
+    cy.get(selector)
+      .invoke('scrollTop')
+      .should('be.gte', visiblePos - inView)
+      .should('be.lte', visiblePos - inView + appr)
 
     cy.visit('/')
+
     cy.get(selector)
       .invoke('scrollTop')
-      .should('be.gte', visiblePos - roundAbout)
-      .should('be.lte', visiblePos + roundAbout)
+      .should('be.gte', visiblePos - inView)
+      .should('be.lte', visiblePos - inView + appr)
+
+    cy.get(selector).scrollTo(
+      0,
+      outOfView,
+      { duration: 100 },
+      { duration: 100 }
+    )
+
+    cy.visit('/')
+
+    cy.get(selector)
+      .invoke('scrollTop')
+      .should('be.gte', visiblePos)
+      .should('be.lte', visiblePos + appr)
   })
 })
