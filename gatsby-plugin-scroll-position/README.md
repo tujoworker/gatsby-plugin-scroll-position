@@ -23,7 +23,15 @@ exports.plugins = [
   {
     resolve: 'gatsby-plugin-scroll-position',
     options: {
-      elements: ['.class-selector', '#id-selector'],
+      elements: [
+        '.class-selector',
+        '#id-selector',
+        '[data-testid="test-selector"]',
+        {
+          selector: '#fallback-position',
+          ensureInView: '#fallback-position ul li.scroll-to-me', // ensure this element is in view
+        },
+      ],
     },
   },
 ]

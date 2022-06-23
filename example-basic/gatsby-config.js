@@ -8,6 +8,10 @@ module.exports = {
           '.class-selector',
           '#id-selector',
           '[data-testid="test-selector"]',
+          {
+            selector: '#fallback-position',
+            ensureInView: '#fallback-position ul li.scroll-to-me',
+          },
         ],
       },
     },

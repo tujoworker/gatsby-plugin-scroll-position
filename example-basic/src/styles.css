@@ -23,16 +23,21 @@ a {
   color: black;
 }
 
-.class-selector,
-#id-selector,
-[data-testid='test-selector'] {
+.apply-scrollbar {
   max-height: 6rem;
   max-width: 40rem;
+
   margin: 2rem 0;
   padding: 1rem;
 
   overflow-y: auto;
+  /* will get overwritten */
+  scroll-behavior: smooth;
 
   background-color: teal;
   color: white;
+}
+
+li.scroll-to-me {
+  color: tomato;
 }

@@ -40,4 +40,33 @@ describe('example-basic', () => {
     cy.visit('/page-2')
     cy.get(selector).invoke('scrollTop').should('equal', 100)
   })
+
+  it('fallback-position has to restore its position', () => {
+    const selector = '#fallback-position'
+
+    const visiblePos = 1110
+    const scrollTo = 200
+    const roundAbout = 50
+
+    cy.get(selector).invoke('scrollTop').should('be.gte', visiblePos)
+    cy.get(selector).scrollTo(0, visiblePos + scrollTo)
+    cy.wait(1000)
+    cy.get(selector)
+      .invoke('scrollTop')
+      .should('be.gte', visiblePos + scrollTo)
+
+    cy.visit('/page-2')
+    cy.get(selector)
+      .invoke('scrollTop')
+      .should('be.gte', visiblePos - roundAbout)
+      .should('be.lte', visiblePos + roundAbout)
+    cy.get(selector).scrollTo(0, scrollTo)
+    cy.wait(1000)
+
+    cy.visit('/')
+    cy.get(selector)
+      .invoke('scrollTop')
+      .should('be.gte', visiblePos - roundAbout)
+      .should('be.lte', visiblePos + roundAbout)
+  })
 })

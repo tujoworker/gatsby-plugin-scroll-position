@@ -20,7 +20,7 @@
   "license": "MIT",
   "author": "Tobias Høegh",
   "scripts": {
-    "compile": "esbuild script.js --bundle --outdir=compiled --minify --format=iife",
+    "compile": "esbuild script.js --bundle --outdir=compiled --minify --format=iife --target=es2015",
     "test": "yarn workspace integration-tests test",
     "test:watch": "yarn workspace integration-tests test --watch",
     "lint": "eslint --ext .js --ignore-path ../.gitignore .",

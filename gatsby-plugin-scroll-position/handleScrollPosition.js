@@ -1,5 +1,5 @@
 /**
- * We also have included almost the same code in after "postBodyComponents" inside html.js in order to ea
+ * We also have included the same code "setPostBodyComponents"
  */
 export function handleScrollPosition() {
   if (typeof window === 'undefined') {
@@ -7,14 +7,41 @@ export function handleScrollPosition() {
   }
 
   try {
-    getElements().forEach(({ selector, elements }) => {
+    getElements().forEach(({ selector, fallback, elements }) => {
       elements.forEach((element) => {
-        element.scrollTop = parseFloat(
+        const scrollTop = parseFloat(
           window.localStorage.getItem('scroll-' + selector)
         )
+
+        element.style.scrollBehavior = 'auto'
+        element.scrollTop = scrollTop
+
+        if (fallback) {
+          const fallbackElement = document.querySelector(fallback)
+          if (fallbackElement) {
+            const fallbackOffset =
+              fallbackElement.getBoundingClientRect().top -
+              element.getBoundingClientRect().top
+
+            const isInView =
+              fallbackOffset >= 0 &&
+              fallbackOffset <=
+                element.offsetHeight - fallbackElement.offsetHeight
+
+            if (!isInView) {
+              fallbackElement.style.scrollBehavior = 'auto'
+              fallbackElement.scrollIntoView({ behavior: 'auto' })
+              fallbackElement.style.scrollBehavior = ''
+            }
+          }
+        }
+
+        element.style.scrollBehavior = ''
       })
     })
-  } catch (e) {}
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 export function getElements() {
@@ -22,13 +49,19 @@ export function getElements() {
 
   try {
     const selectors = window.__SP_ELEMENTS__ || []
-    selectors.forEach((selector) => {
+    selectors.forEach((props) => {
+      const { selector, ensureInView: fallback = null } =
+        typeof props === 'string' ? { selector: props } : props
+
       elements.push({
         selector,
+        fallback,
         elements: Array.from(document.querySelectorAll(selector)),
       })
     })
-  } catch (e) {}
+  } catch (e) {
+    console.error(e)
+  }
 
   return elements
 }
