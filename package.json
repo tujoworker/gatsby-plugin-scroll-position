@@ -12,7 +12,7 @@
   "scripts": {
     "start": "yarn compile && yarn workspace example-basic start",
     "build": "yarn compile && yarn workspace example-basic build",
-    "clean": "yarn compile && yarn workspace example-basic clean",
+    "clean": "yarn workspace example-basic clean",
     "serve": "yarn workspace example-basic serve",
     "test": "yarn test:cypress",
     "test:not-in-use": "yarn workspace integration-tests test",

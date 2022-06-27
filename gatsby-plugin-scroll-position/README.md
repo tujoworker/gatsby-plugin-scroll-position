@@ -37,6 +37,12 @@ exports.plugins = [
 ]
 ```
 
+## `ensureInView` smartness
+
+When nothing is stored in the localStorage, the plugin tries to fulfill the scroll position of the defined selector given in `ensureInView`.
+
+But when the user did scroll before, it will persist its position, as long as it is actually visible.
+
 ## How it works
 
 It puts a script at the bottom of every page body in order to restore scroll position before React has hydrated. It stores and restores scroll position on every page transition.

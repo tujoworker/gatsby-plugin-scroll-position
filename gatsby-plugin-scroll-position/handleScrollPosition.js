@@ -19,20 +19,21 @@ export function handleScrollPosition() {
         if (fallback) {
           const fallbackElement = document.querySelector(fallback)
           if (fallbackElement) {
-            const fallbackOffset =
-              fallbackElement.getBoundingClientRect().top -
-              element.getBoundingClientRect().top
+            element.style.position = 'relative'
+            const offsetTop = fallbackElement.offsetTop
 
             const isInView =
-              fallbackOffset >= 0 &&
-              fallbackOffset <=
-                element.offsetHeight - fallbackElement.offsetHeight
+              element.scrollTop <= offsetTop &&
+              element.scrollTop >=
+                offsetTop -
+                  element.offsetHeight +
+                  fallbackElement.offsetHeight
 
             if (!isInView) {
-              fallbackElement.style.scrollBehavior = 'auto'
-              fallbackElement.scrollIntoView({ behavior: 'auto' })
-              fallbackElement.style.scrollBehavior = ''
+              element.scrollTop = offsetTop
             }
+
+            element.style.position = ''
           }
         }
 

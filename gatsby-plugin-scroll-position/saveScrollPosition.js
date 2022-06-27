@@ -10,5 +10,7 @@ export function saveScrollPosition() {
         )
       })
     })
-  } catch (e) {}
+  } catch (e) {
+    console.error(e)
+  }
 }
