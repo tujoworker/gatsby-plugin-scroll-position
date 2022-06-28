@@ -1,17 +1,23 @@
 import { handleScrollPosition } from './handleScrollPosition'
 import { saveScrollPosition } from './saveScrollPosition'
 
-let isReady = false
+let isMounted = false
 
-export function onRouteUpdate() {
-  if (isReady) {
+export function onPreRouteUpdate() {
+  if (isMounted) {
+    saveScrollPosition()
+  }
+}
+
+export function onRouteUpdate({ prevLocation }) {
+  if (isMounted && prevLocation) {
     handleScrollPosition()
   }
 }
 
 export function onInitialClientRender() {
   try {
-    handleScrollPosition()
+    handleScrollPosition({ executeOnce: true })
 
     window.addEventListener('beforeunload', saveScrollPosition)
 
@@ -23,11 +29,5 @@ export function onInitialClientRender() {
     console.error(e)
   }
 
-  isReady = true
-}
-
-export const onPreRouteUpdate = () => {
-  if (isReady) {
-    saveScrollPosition()
-  }
+  isMounted = true
 }

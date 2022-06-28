@@ -1,3 +1,3 @@
 import { handleScrollPosition } from './handleScrollPosition'
 
-handleScrollPosition()
+handleScrollPosition({ executeOnce: true })
