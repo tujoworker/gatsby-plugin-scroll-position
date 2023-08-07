@@ -17,7 +17,7 @@ export function onRouteUpdate({ prevLocation }) {
 
 export function onInitialClientRender() {
   try {
-    handleScrollPosition({ executeOnce: true })
+    handleScrollPosition()
 
     window.addEventListener('beforeunload', saveScrollPosition)
 

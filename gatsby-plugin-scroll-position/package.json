@@ -23,7 +23,7 @@
     "compile": "esbuild script.js --bundle --outdir=compiled --minify --format=iife --target=es2015",
     "test": "yarn workspace integration-tests test",
     "test:watch": "yarn workspace integration-tests test --watch",
-    "lint": "eslint --ext .js --ignore-path ../.gitignore .",
+    "lint": "eslint --ext .js --ignore-path ../.gitignore --ignore-pattern ./**/compiled/* .",
     "release": "semantic-release",
     "release:dry": "semantic-release --dry-run"
   },

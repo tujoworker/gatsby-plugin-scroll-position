@@ -24,6 +24,7 @@ a {
 }
 
 .apply-scrollbar {
+  position: relative;
   height: 10rem;
   width: 40rem;
 

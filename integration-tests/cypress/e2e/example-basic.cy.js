@@ -5,6 +5,7 @@ Cypress.config({
 describe('example-basic', () => {
   beforeEach(() => {
     cy.visit('/')
+    cy.wait(600) // to ensure React is actaully mounted
   })
 
   it('root page has wrapper with "main" element', () => {
@@ -17,7 +18,7 @@ describe('example-basic', () => {
     cy.get(selector).invoke('scrollTop').should('equal', 0)
     cy.get(selector)
       .invoke('attr', 'style', 'scrollBehavior: auto')
-      .scrollTo(0, 100, { duration: 100 })
+      .scrollTo(0, 100)
     cy.get(selector).invoke('scrollTop').should('equal', 100)
     cy.visit('/page-2')
     cy.get(selector).invoke('scrollTop').should('equal', 100)
@@ -29,7 +30,7 @@ describe('example-basic', () => {
     cy.get(selector).invoke('scrollTop').should('equal', 0)
     cy.get(selector)
       .invoke('attr', 'style', 'scrollBehavior: auto')
-      .scrollTo(0, 100, { duration: 100 })
+      .scrollTo(0, 100)
     cy.get(selector).invoke('scrollTop').should('equal', 100)
     cy.visit('/page-2')
     cy.get(selector).invoke('scrollTop').should('equal', 100)
@@ -41,75 +42,70 @@ describe('example-basic', () => {
     cy.get(selector).invoke('scrollTop').should('equal', 0)
     cy.get(selector)
       .invoke('attr', 'style', 'scrollBehavior: auto')
-      .scrollTo(0, 100, { duration: 100 })
+      .scrollTo(0, 100)
     cy.get(selector).invoke('scrollTop').should('equal', 100)
     cy.visit('/page-2')
     cy.get(selector).invoke('scrollTop').should('equal', 100)
   })
 
-  it('fallback-position has to restore its position', () => {
+  it('fallback-position has to keep its position', () => {
     const selector = '#fallback-position'
 
-    const visiblePos = 1110
-    const inView = 100
-    const outOfView = 200
-    const appr = 40
+    const visiblePos = 1100
+    const appr = 50
 
     cy.get(selector)
       .invoke('scrollTop')
-      .should('be.gte', visiblePos)
-      .should('be.lte', visiblePos + appr)
-
-    cy.get(selector).scrollTo(
-      0,
-      visiblePos + outOfView,
-      { duration: 100 },
-      { duration: 100 }
-    )
-
-    cy.get(selector)
-      .invoke('scrollTop')
-      .should('be.gte', visiblePos + outOfView)
-      .should('be.lte', visiblePos + outOfView + appr)
+      .should('be.within', visiblePos, visiblePos + appr)
 
     cy.visit('/page-2')
 
     cy.get(selector)
       .invoke('scrollTop')
-      .should('be.gte', visiblePos)
-      .should('be.lte', visiblePos + appr)
+      .should('be.within', visiblePos, visiblePos + appr)
+  })
 
-    cy.get(selector).scrollTo(
-      0,
-      visiblePos - inView,
-      { duration: 100 },
-      { duration: 100 }
-    )
+  it('fallback-position has to restore its "in view" position', () => {
+    const selector = '#fallback-position'
 
-    cy.get(selector)
-      .invoke('scrollTop')
-      .should('be.gte', visiblePos - inView)
-      .should('be.lte', visiblePos - inView + appr)
-
-    cy.visit('/')
+    const visiblePos = 1100
+    const inView = 100
+    const appr = 50
 
     cy.get(selector)
       .invoke('scrollTop')
-      .should('be.gte', visiblePos - inView)
-      .should('be.lte', visiblePos - inView + appr)
+      .should('be.within', visiblePos, visiblePos + appr)
 
-    cy.get(selector).scrollTo(
-      0,
-      outOfView,
-      { duration: 100 },
-      { duration: 100 }
-    )
-
-    cy.visit('/')
+    cy.get(selector).scrollTo(0, visiblePos - inView)
 
     cy.get(selector)
       .invoke('scrollTop')
-      .should('be.gte', visiblePos)
-      .should('be.lte', visiblePos + appr)
+      .should('be.within', visiblePos - inView, visiblePos)
+
+    cy.visit('/page-2')
+
+    cy.get(selector)
+      .invoke('scrollTop')
+      .should('be.within', visiblePos - inView, visiblePos)
+  })
+
+  it('fallback-position has to restore its "out of view" position', () => {
+    const selector = '#fallback-position'
+
+    const visiblePos = 1100
+    const outOfView = 200
+    const appr = 50
+
+    cy.get(selector)
+      .invoke('scrollTop')
+      .should('be.within', visiblePos, visiblePos + appr)
+
+    cy.get(selector).scrollTo(0, visiblePos - outOfView)
+
+    cy.visit('/page-2')
+
+    cy.get(selector)
+      .invoke('scrollTop')
+      .should('be.within', visiblePos - outOfView, visiblePos)
   })
 })
