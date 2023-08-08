@@ -1,14 +1,10 @@
 /**
  * We also have included the same code "setPostBodyComponents"
  */
-export function handleScrollPosition({ executeOnce = 0 } = {}) {
+export function handleScrollPosition() {
   if (typeof window === 'undefined') {
     return // stop here
   }
-  if (executeOnce && window.__sp_executed) {
-    return // stop here
-  }
-  window.__sp_executed = 1
 
   try {
     getElements().forEach(({ selector, fallback, elements }) => {
@@ -17,12 +13,10 @@ export function handleScrollPosition({ executeOnce = 0 } = {}) {
           parseFloat(window.localStorage.getItem('scroll-' + selector)) ||
           0
 
-        if (fallback) {
+        if (fallback && scrollTop === 0) {
           const fallbackElement = document.querySelector(fallback)
           if (fallbackElement) {
-            element.style.position = 'relative'
             const offsetTop = fallbackElement.offsetTop
-            element.style.position = ''
 
             const isInView =
               scrollTop <= offsetTop &&

@@ -23,8 +23,14 @@
     "compile": "yarn workspace gatsby-plugin-scroll-position compile",
     "release": "yarn compile && yarn workspace gatsby-plugin-scroll-position release"
   },
-  "volta": {
-    "node": "18.4.0"
+  "release": {
+    "branches": [
+      "main",
+      "next"
+    ]
   },
-  "packageManager": "yarn@3.2.1"
+  "volta": {
+    "node": "18.13.0"
+  },
+  "packageManager": "yarn@3.6.1"
 }

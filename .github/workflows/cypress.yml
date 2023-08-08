@@ -2,7 +2,7 @@ name: Cypress # NB: The name is used in workflow_run
 
 on:
   push:
-    branches: [main, beta, chore/*, fix/*, ftr/*]
+    branches: [main, beta, chore/*, fix/*, feat/*]
   pull_request:
     types: [opened]
     branches: [main, beta]
@@ -21,22 +21,22 @@ jobs:
       CYPRESS_CACHE_FOLDER: ~/.cache/Cypress
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Use Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: lts/*
+          node-version-file: 'package.json'
 
       - name: Use deps cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: yarn-cache
         with:
           path: ./.yarn/cache
           key: deps-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Use Gatsby cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: gatsby-cache
         with:
           path: |
@@ -45,7 +45,7 @@ jobs:
           key: gatsby-${{ runner.os }}
 
       - name: Use Cypress cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: cypress-binary-cache
         with:
           path: ~/.cache/Cypress
@@ -59,7 +59,7 @@ jobs:
         run: yarn workspace integration-tests cypress install
 
       - name: Use Cypress
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v5
         with:
           install: false
           working-directory: integration-tests
