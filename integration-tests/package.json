@@ -10,7 +10,7 @@
     "test:cypress:ci": "./run-cypress-tests.sh"
   },
   "dependencies": {
-    "gatsby-plugin-scroll-position": "workspace:*"
+    "gatsby-plugin-scroll-position": "*"
   },
   "devDependencies": {
     "@babel/runtime": "7.22.10",

@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "gatsby": "5.11.0",
-    "gatsby-plugin-scroll-position": "workspace:*",
+    "gatsby-plugin-scroll-position": "*",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }

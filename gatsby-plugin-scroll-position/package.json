@@ -46,6 +46,12 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "semantic-release": "^21.0.7"
   },
+  "release": {
+    "branches": [
+      "main",
+      "next"
+    ]
+  },
   "publishConfig": {
     "access": "public"
   },

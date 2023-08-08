@@ -10568,7 +10568,7 @@ __metadata:
   resolution: "example-basic@workspace:example-basic"
   dependencies:
     gatsby: 5.11.0
-    gatsby-plugin-scroll-position: "workspace:*"
+    gatsby-plugin-scroll-position: "*"
     react: 18.2.0
     react-dom: 18.2.0
   languageName: unknown
@@ -11537,7 +11537,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-scroll-position@workspace:*, gatsby-plugin-scroll-position@workspace:gatsby-plugin-scroll-position":
+"gatsby-plugin-scroll-position@npm:*":
+  version: 1.2.1
+  resolution: "gatsby-plugin-scroll-position@npm:1.2.1"
+  peerDependencies:
+    gatsby: "*"
+    react: "*"
+    react-dom: "*"
+  checksum: eabd8ddb2c8271fc6af2e8efdad3e901c23e820d053e4c80a7e1abbd60fc4ddbb4ac10718628586e0e91022e1d4fa9fdaf38f4ff9e9703fe2fdd872a1d942bc6
+  languageName: node
+  linkType: hard
+
+"gatsby-plugin-scroll-position@workspace:gatsby-plugin-scroll-position":
   version: 0.0.0-use.local
   resolution: "gatsby-plugin-scroll-position@workspace:gatsby-plugin-scroll-position"
   dependencies:
@@ -12853,7 +12864,7 @@ __metadata:
     "@babel/runtime": 7.22.10
     "@testing-library/react": 14.0.0
     cypress: 12.17.3
-    gatsby-plugin-scroll-position: "workspace:*"
+    gatsby-plugin-scroll-position: "*"
     jest: 29.6.2
     react: 18.2.0
     signal-exit: 4.1.0
