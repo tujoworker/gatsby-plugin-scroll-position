@@ -86,7 +86,7 @@ describe('example-basic', () => {
 
     cy.get(selector)
       .invoke('scrollTop')
-      .should('be.within', visiblePos, visiblePos + appr)
+      .should('be.within', visiblePos - inView, visiblePos)
   })
 
   it('fallback-position has to restore its "out of view" position', () => {
