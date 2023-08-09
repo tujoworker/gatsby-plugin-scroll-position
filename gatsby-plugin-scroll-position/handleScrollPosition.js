@@ -1,7 +1,7 @@
 /**
  * We also have included the same code "setPostBodyComponents"
  */
-export function handleScrollPosition() {
+export function handleScrollPosition({ scrollBehavior = null } = {}) {
   if (typeof window === 'undefined') {
     return // stop here
   }
@@ -9,9 +9,7 @@ export function handleScrollPosition() {
   try {
     getElements().forEach(({ selector, fallback, elements }) => {
       elements.forEach((element) => {
-        let scrollTop =
-          parseFloat(window.localStorage.getItem('scroll-' + selector)) ||
-          0
+        let scrollTop = 0
 
         if (fallback && scrollTop === 0) {
           const fallbackElement = document.querySelector(fallback)
@@ -29,11 +27,27 @@ export function handleScrollPosition() {
               scrollTop = offsetTop
             }
           }
+        } else {
+          scrollTop = parseFloat(
+            window.localStorage.getItem('scroll-' + selector)
+          )
         }
 
         element.style.scrollBehavior = 'auto'
-        element.scrollTop = scrollTop
-        element.style.scrollBehavior = ''
+
+        if (scrollBehavior === 'smooth') {
+          element.scrollTop = parseFloat(
+            window.localStorage.getItem('scroll-' + selector)
+          )
+          window.requestAnimationFrame(() => {
+            element.style.scrollBehavior = 'smooth'
+            element.scrollTop = scrollTop
+            element.style.scrollBehavior = ''
+          })
+        } else {
+          element.scrollTop = scrollTop
+          element.style.scrollBehavior = ''
+        }
       })
     })
   } catch (e) {

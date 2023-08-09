@@ -6,144 +6,21 @@ export function Content() {
       <div className="apply-scrollbar class-selector">
         <h2>class-selector</h2>
         <p>
-          Id qui labore pariatur enim quis exercitation. Laboris deserunt
-          sint qui non reprehenderit ut aute veniam deserunt sint sint.
-          Commodo enim fugiat sit sint aliquip magna adipisicing ex nostrud
-          deserunt consequat sunt. Veniam sit aliquip minim ea consequat in
-          do. Reprehenderit culpa commodo cillum minim. Nulla eiusmod qui
-          consequat mollit et dolor id. Do cillum aute aliqua proident
-          laborum proident sit reprehenderit velit. Nulla laborum mollit do
-          sint laborum ad reprehenderit dolor cupidatat. Duis eiusmod
-          exercitation adipisicing cillum fugiat dolor amet in enim elit.
-          Veniam duis qui exercitation in cupidatat exercitation labore
-          quis duis ullamco culpa est labore cillum. Cupidatat ad est quis
-          culpa ullamco qui velit eu et ea ad tempor fugiat. In ea anim et
-          anim deserunt mollit esse. Cillum voluptate ex adipisicing
-          consectetur sunt commodo adipisicing. Incididunt magna aliqua
-          consequat sunt id consectetur velit exercitation magna commodo
-          sunt veniam. Duis proident exercitation enim exercitation ullamco
-          laborum dolore proident nulla incididunt officia in labore.
-          Mollit sit adipisicing do elit Lorem mollit ut. Sint commodo
-          Lorem occaecat cillum anim ad do eiusmod aliquip adipisicing
-          reprehenderit eu aliqua. Amet exercitation elit elit esse ex
-          ipsum. In nisi aute laborum deserunt deserunt qui occaecat nisi
-          minim. Duis pariatur ex do id reprehenderit enim ea aliqua veniam
-          aliqua eu. Sit ea dolor laborum id velit sint exercitation tempor
-          sint quis. Veniam do cillum officia culpa anim proident nulla
-          veniam elit. Non aute enim aute veniam. Ex adipisicing occaecat
-          ipsum exercitation anim commodo nostrud cupidatat ipsum pariatur
-          et aute sit. Qui elit cillum consectetur incididunt laborum
-          aliquip ullamco proident duis non cillum. Incididunt adipisicing
-          mollit labore elit id ex cillum dolore pariatur. Ullamco id sunt
-          dolore deserunt culpa eu. Officia amet anim sunt in eu consequat
-          consectetur cupidatat ad irure eiusmod. Occaecat qui ex veniam
-          culpa consequat incididunt esse. Occaecat consectetur cillum
-          cupidatat adipisicing ad enim sint dolor enim nulla. Ut Lorem
-          cupidatat mollit id esse consequat ex duis cupidatat et nisi
-          cillum cupidatat. Occaecat amet Lorem dolor excepteur eiusmod. In
-          amet duis tempor non ex sunt proident laboris tempor. Duis sit
-          officia mollit labore elit veniam aliqua non minim excepteur
-          minim. Anim excepteur id irure excepteur ex do dolore ad elit.
-          Sint pariatur ut fugiat magna cupidatat exercitation excepteur.
-          Irure qui exercitation officia adipisicing eiusmod in
-          reprehenderit quis veniam ex dolore. Proident quis commodo Lorem
-          irure tempor proident nulla.
+          <Text />
         </p>
       </div>
 
       <div className="apply-scrollbar" id="id-selector">
         <h2>id-selector</h2>
         <p>
-          Id qui labore pariatur enim quis exercitation. Laboris deserunt
-          sint qui non reprehenderit ut aute veniam deserunt sint sint.
-          Commodo enim fugiat sit sint aliquip magna adipisicing ex nostrud
-          deserunt consequat sunt. Veniam sit aliquip minim ea consequat in
-          do. Reprehenderit culpa commodo cillum minim. Nulla eiusmod qui
-          consequat mollit et dolor id. Do cillum aute aliqua proident
-          laborum proident sit reprehenderit velit. Nulla laborum mollit do
-          sint laborum ad reprehenderit dolor cupidatat. Duis eiusmod
-          exercitation adipisicing cillum fugiat dolor amet in enim elit.
-          Veniam duis qui exercitation in cupidatat exercitation labore
-          quis duis ullamco culpa est labore cillum. Cupidatat ad est quis
-          culpa ullamco qui velit eu et ea ad tempor fugiat. In ea anim et
-          anim deserunt mollit esse. Cillum voluptate ex adipisicing
-          consectetur sunt commodo adipisicing. Incididunt magna aliqua
-          consequat sunt id consectetur velit exercitation magna commodo
-          sunt veniam. Duis proident exercitation enim exercitation ullamco
-          laborum dolore proident nulla incididunt officia in labore.
-          Mollit sit adipisicing do elit Lorem mollit ut. Sint commodo
-          Lorem occaecat cillum anim ad do eiusmod aliquip adipisicing
-          reprehenderit eu aliqua. Amet exercitation elit elit esse ex
-          ipsum. In nisi aute laborum deserunt deserunt qui occaecat nisi
-          minim. Duis pariatur ex do id reprehenderit enim ea aliqua veniam
-          aliqua eu. Sit ea dolor laborum id velit sint exercitation tempor
-          sint quis. Veniam do cillum officia culpa anim proident nulla
-          veniam elit. Non aute enim aute veniam. Ex adipisicing occaecat
-          ipsum exercitation anim commodo nostrud cupidatat ipsum pariatur
-          et aute sit. Qui elit cillum consectetur incididunt laborum
-          aliquip ullamco proident duis non cillum. Incididunt adipisicing
-          mollit labore elit id ex cillum dolore pariatur. Ullamco id sunt
-          dolore deserunt culpa eu. Officia amet anim sunt in eu consequat
-          consectetur cupidatat ad irure eiusmod. Occaecat qui ex veniam
-          culpa consequat incididunt esse. Occaecat consectetur cillum
-          cupidatat adipisicing ad enim sint dolor enim nulla. Ut Lorem
-          cupidatat mollit id esse consequat ex duis cupidatat et nisi
-          cillum cupidatat. Occaecat amet Lorem dolor excepteur eiusmod. In
-          amet duis tempor non ex sunt proident laboris tempor. Duis sit
-          officia mollit labore elit veniam aliqua non minim excepteur
-          minim. Anim excepteur id irure excepteur ex do dolore ad elit.
-          Sint pariatur ut fugiat magna cupidatat exercitation excepteur.
-          Irure qui exercitation officia adipisicing eiusmod in
-          reprehenderit quis veniam ex dolore. Proident quis commodo Lorem
-          irure tempor proident nulla.
+          <Text />
         </p>
       </div>
 
       <div className="apply-scrollbar" data-testid="test-selector">
         <h2>other attributes</h2>
         <p>
-          Id qui labore pariatur enim quis exercitation. Laboris deserunt
-          sint qui non reprehenderit ut aute veniam deserunt sint sint.
-          Commodo enim fugiat sit sint aliquip magna adipisicing ex nostrud
-          deserunt consequat sunt. Veniam sit aliquip minim ea consequat in
-          do. Reprehenderit culpa commodo cillum minim. Nulla eiusmod qui
-          consequat mollit et dolor id. Do cillum aute aliqua proident
-          laborum proident sit reprehenderit velit. Nulla laborum mollit do
-          sint laborum ad reprehenderit dolor cupidatat. Duis eiusmod
-          exercitation adipisicing cillum fugiat dolor amet in enim elit.
-          Veniam duis qui exercitation in cupidatat exercitation labore
-          quis duis ullamco culpa est labore cillum. Cupidatat ad est quis
-          culpa ullamco qui velit eu et ea ad tempor fugiat. In ea anim et
-          anim deserunt mollit esse. Cillum voluptate ex adipisicing
-          consectetur sunt commodo adipisicing. Incididunt magna aliqua
-          consequat sunt id consectetur velit exercitation magna commodo
-          sunt veniam. Duis proident exercitation enim exercitation ullamco
-          laborum dolore proident nulla incididunt officia in labore.
-          Mollit sit adipisicing do elit Lorem mollit ut. Sint commodo
-          Lorem occaecat cillum anim ad do eiusmod aliquip adipisicing
-          reprehenderit eu aliqua. Amet exercitation elit elit esse ex
-          ipsum. In nisi aute laborum deserunt deserunt qui occaecat nisi
-          minim. Duis pariatur ex do id reprehenderit enim ea aliqua veniam
-          aliqua eu. Sit ea dolor laborum id velit sint exercitation tempor
-          sint quis. Veniam do cillum officia culpa anim proident nulla
-          veniam elit. Non aute enim aute veniam. Ex adipisicing occaecat
-          ipsum exercitation anim commodo nostrud cupidatat ipsum pariatur
-          et aute sit. Qui elit cillum consectetur incididunt laborum
-          aliquip ullamco proident duis non cillum. Incididunt adipisicing
-          mollit labore elit id ex cillum dolore pariatur. Ullamco id sunt
-          dolore deserunt culpa eu. Officia amet anim sunt in eu consequat
-          consectetur cupidatat ad irure eiusmod. Occaecat qui ex veniam
-          culpa consequat incididunt esse. Occaecat consectetur cillum
-          cupidatat adipisicing ad enim sint dolor enim nulla. Ut Lorem
-          cupidatat mollit id esse consequat ex duis cupidatat et nisi
-          cillum cupidatat. Occaecat amet Lorem dolor excepteur eiusmod. In
-          amet duis tempor non ex sunt proident laboris tempor. Duis sit
-          officia mollit labore elit veniam aliqua non minim excepteur
-          minim. Anim excepteur id irure excepteur ex do dolore ad elit.
-          Sint pariatur ut fugiat magna cupidatat exercitation excepteur.
-          Irure qui exercitation officia adipisicing eiusmod in
-          reprehenderit quis veniam ex dolore. Proident quis commodo Lorem
-          irure tempor proident nulla.
+          <Text />
         </p>
       </div>
 
@@ -286,6 +163,53 @@ export function Content() {
           <li>irure tempor proident nulla.</li>
         </ul>
       </div>
+    </>
+  )
+}
+
+function Text() {
+  return (
+    <>
+      Id qui labore pariatur enim quis exercitation. Laboris deserunt sint
+      qui non reprehenderit ut aute veniam deserunt sint sint. Commodo enim
+      fugiat sit sint aliquip magna adipisicing ex nostrud deserunt
+      consequat sunt. Veniam sit aliquip minim ea consequat in do.
+      Reprehenderit culpa commodo cillum minim. Nulla eiusmod qui consequat
+      mollit et dolor id. Do cillum aute aliqua proident laborum proident
+      sit reprehenderit velit. Nulla laborum mollit do sint laborum ad
+      reprehenderit dolor cupidatat. Duis eiusmod exercitation adipisicing
+      cillum fugiat dolor amet in enim elit. Veniam duis qui exercitation
+      in cupidatat exercitation labore quis duis ullamco culpa est labore
+      cillum. Cupidatat ad est quis culpa ullamco qui velit eu et ea ad
+      tempor fugiat. In ea anim et anim deserunt mollit esse. Cillum
+      voluptate ex adipisicing consectetur sunt commodo adipisicing.
+      Incididunt magna aliqua consequat sunt id consectetur velit
+      exercitation magna commodo sunt veniam. Duis proident exercitation
+      enim exercitation ullamco laborum dolore proident nulla incididunt
+      officia in labore. Mollit sit adipisicing do elit Lorem mollit ut.
+      Sint commodo Lorem occaecat cillum anim ad do eiusmod aliquip
+      adipisicing reprehenderit eu aliqua. Amet exercitation elit elit esse
+      ex ipsum. In nisi aute laborum deserunt deserunt qui occaecat nisi
+      minim. Duis pariatur ex do id reprehenderit enim ea aliqua veniam
+      aliqua eu. Sit ea dolor laborum id velit sint exercitation tempor
+      sint quis. Veniam do cillum officia culpa anim proident nulla veniam
+      elit. Non aute enim aute veniam. Ex adipisicing occaecat ipsum
+      exercitation anim commodo nostrud cupidatat ipsum pariatur et aute
+      sit. Qui elit cillum consectetur incididunt laborum aliquip ullamco
+      proident duis non cillum. Incididunt adipisicing mollit labore elit
+      id ex cillum dolore pariatur. Ullamco id sunt dolore deserunt culpa
+      eu. Officia amet anim sunt in eu consequat consectetur cupidatat ad
+      irure eiusmod. Occaecat qui ex veniam culpa consequat incididunt
+      esse. Occaecat consectetur cillum cupidatat adipisicing ad enim sint
+      dolor enim nulla. Ut Lorem cupidatat mollit id esse consequat ex duis
+      cupidatat et nisi cillum cupidatat. Occaecat amet Lorem dolor
+      excepteur eiusmod. In amet duis tempor non ex sunt proident laboris
+      tempor. Duis sit officia mollit labore elit veniam aliqua non minim
+      excepteur minim. Anim excepteur id irure excepteur ex do dolore ad
+      elit. Sint pariatur ut fugiat magna cupidatat exercitation excepteur.
+      Irure qui exercitation officia adipisicing eiusmod in reprehenderit
+      quis veniam ex dolore. Proident quis commodo Lorem irure tempor
+      proident nulla.
     </>
   )
 }
