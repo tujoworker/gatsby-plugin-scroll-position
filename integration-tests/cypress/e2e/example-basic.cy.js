@@ -48,7 +48,7 @@ describe('example-basic', () => {
     cy.get(selector).invoke('scrollTop').should('equal', 100)
   })
 
-  it('fallback-position has to keep its position', () => {
+  it('fallback-position has to use its initial given position', () => {
     const selector = '#fallback-position'
 
     const visiblePos = 1100
@@ -86,7 +86,7 @@ describe('example-basic', () => {
 
     cy.get(selector)
       .invoke('scrollTop')
-      .should('be.within', visiblePos - inView, visiblePos)
+      .should('be.within', visiblePos, visiblePos + appr)
   })
 
   it('fallback-position has to restore its "out of view" position', () => {
@@ -106,6 +106,6 @@ describe('example-basic', () => {
 
     cy.get(selector)
       .invoke('scrollTop')
-      .should('be.within', visiblePos - outOfView, visiblePos)
+      .should('be.within', visiblePos, visiblePos + appr)
   })
 })

@@ -2,10 +2,10 @@ name: Cypress # NB: The name is used in workflow_run
 
 on:
   push:
-    branches: [main, beta, chore/*, fix/*, feat/*]
+    branches: [chore/*, fix/*, feat/*]
   pull_request:
     types: [opened]
-    branches: [main, beta]
+    branches: [main, beta, next]
 
 jobs:
   build:
@@ -30,9 +30,9 @@ jobs:
 
       - name: Use deps cache
         uses: actions/cache@v3
-        id: yarn-cache
+        id: modules-cache
         with:
-          path: ./.yarn/cache
+          path: '**/node_modules'
           key: deps-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Use Gatsby cache

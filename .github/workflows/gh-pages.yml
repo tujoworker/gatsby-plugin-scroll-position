@@ -1,11 +1,8 @@
 name: GitHub Pages
 
 on:
-  workflow_run:
-    workflows: ['Cypress']
+  push:
     branches: [main]
-    types:
-      - completed
 
 jobs:
   deploy:
@@ -26,9 +23,9 @@ jobs:
 
       - name: Use deps cache
         uses: actions/cache@v3
-        id: yarn-cache
+        id: modules-cache
         with:
-          path: ./.yarn/cache
+          path: '**/node_modules'
           key: deps-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Use Gatsby cache

@@ -8,7 +8,6 @@
   "private": true,
   "license": "MIT",
   "author": "Tobias Høegh",
-  "version": "0.0.0",
   "scripts": {
     "start": "yarn compile && yarn workspace example-basic start",
     "build": "yarn compile && yarn workspace example-basic build",
@@ -22,6 +21,13 @@
     "lint": "yarn workspace gatsby-plugin-scroll-position lint",
     "compile": "yarn workspace gatsby-plugin-scroll-position compile",
     "release": "yarn compile && yarn workspace gatsby-plugin-scroll-position release"
+  },
+  "resolutions": {
+    "example-basic/gatsby-plugin-scroll-position": "workspace:*"
+  },
+  "engines": {
+    "node": "18.13.0",
+    "yarn": ">=1.22.10"
   },
   "volta": {
     "node": "18.13.0"

@@ -24,7 +24,7 @@
     "test": "yarn workspace integration-tests test",
     "test:watch": "yarn workspace integration-tests test --watch",
     "lint": "eslint --ext .js --ignore-path ../.gitignore --ignore-pattern ./**/compiled/* .",
-    "release": "semantic-release",
+    "release": "npx semantic-release",
     "release:dry": "semantic-release --dry-run"
   },
   "peerDependencies": {
@@ -36,15 +36,15 @@
     "@testing-library/react": "14.0.0",
     "babel-eslint": "10.1.0",
     "esbuild": "0.18.19",
-    "eslint": "^8.46.0",
-    "eslint-config-react-app": "^7.0.1",
-    "eslint-plugin-flowtype": "^8.0.3",
-    "eslint-plugin-import": "^2.28.0",
-    "eslint-plugin-jest": "^27.2.3",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-react": "^7.33.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "semantic-release": "^21.0.7"
+    "eslint": "8.46.0",
+    "eslint-config-react-app": "7.0.1",
+    "eslint-plugin-flowtype": "8.0.3",
+    "eslint-plugin-import": "2.28.0",
+    "eslint-plugin-jest": "27.2.3",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.33.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "semantic-release": "21.0.7"
   },
   "release": {
     "branches": [
