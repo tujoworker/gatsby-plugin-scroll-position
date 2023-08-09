@@ -9,9 +9,10 @@ export function handleScrollPosition({ scrollBehavior = null } = {}) {
   try {
     getElements().forEach(({ selector, fallback, elements }) => {
       elements.forEach((element) => {
-        let scrollTop =
-          parseFloat(window.localStorage.getItem('scroll-' + selector)) ||
-          0
+        const storedPos = parseFloat(
+          window.localStorage.getItem('scroll-' + selector)
+        )
+        let scrollTop = storedPos || 0
 
         if (fallback) {
           const fallbackElement = document.querySelector(fallback)
@@ -34,18 +35,12 @@ export function handleScrollPosition({ scrollBehavior = null } = {}) {
         element.style.scrollBehavior = 'auto'
 
         if (scrollBehavior === 'smooth') {
-          element.scrollTop = parseFloat(
-            window.localStorage.getItem('scroll-' + selector)
-          )
-          window.requestAnimationFrame(() => {
-            element.style.scrollBehavior = 'smooth'
-            element.scrollTop = scrollTop
-            element.style.scrollBehavior = ''
-          })
-        } else {
-          element.scrollTop = scrollTop
-          element.style.scrollBehavior = ''
+          element.scrollTop = storedPos
+          element.style.scrollBehavior = 'smooth'
         }
+
+        element.scrollTop = scrollTop
+        element.style.scrollBehavior = ''
       })
     })
   } catch (e) {
