@@ -9,9 +9,11 @@ export function handleScrollPosition({ scrollBehavior = null } = {}) {
   try {
     getElements().forEach(({ selector, fallback, elements }) => {
       elements.forEach((element) => {
-        let scrollTop = 0
+        let scrollTop =
+          parseFloat(window.localStorage.getItem('scroll-' + selector)) ||
+          0
 
-        if (fallback && scrollTop === 0) {
+        if (fallback) {
           const fallbackElement = document.querySelector(fallback)
           if (fallbackElement) {
             const offsetTop = fallbackElement.offsetTop
@@ -27,10 +29,6 @@ export function handleScrollPosition({ scrollBehavior = null } = {}) {
               scrollTop = offsetTop
             }
           }
-        } else {
-          scrollTop = parseFloat(
-            window.localStorage.getItem('scroll-' + selector)
-          )
         }
 
         element.style.scrollBehavior = 'auto'
